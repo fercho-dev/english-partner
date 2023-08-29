@@ -26,6 +26,7 @@ export function Header() {
             height={70}
             alt="NextUI hero Image"
             src="/logo.svg"
+            className="min-w-[50px]"
           />
           <p className="font-bold text-inherit">English Partner</p>
         </NavbarBrand>
