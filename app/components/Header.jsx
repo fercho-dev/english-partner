@@ -16,13 +16,14 @@ export function Header() {
   ];
 
   return (
-    <Navbar className="bg-primary text-white justify-start" onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+    <Navbar className="bg-primary text-white" onMenuOpenChange={setIsMenuOpen} maxWidth="full">
+      <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
+          <Link className="text-white" color="foreground" href="#">
           <Image
             width={70}
             height={70}
@@ -30,18 +31,19 @@ export function Header() {
             src="/logo.svg"
             className="min-w-[50px]"
           />
-          <p className="font-bold text-inherit">English Partner</p>
+            English Partner
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-20">
+      <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link className="text-white" color="foreground" href="#">
             Chat
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-white" color="foreground" href="#">
+          <Link className="text-white" href="#" aria-current="page">
             Short Story
           </Link>
         </NavbarItem>
