@@ -1,19 +1,13 @@
-'use client'
+"use client";
 
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem,
-        Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem,
+        Link, NavbarMenuToggle, NavbarMenu, NavbarMenuItem,
         Image} from "@nextui-org/react";
+import { headerMenuItems } from "../copys";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Chat",
-    "Short Story",
-    "Vocabulary",
-    "Take a test",
-  ];
 
   return (
     <Navbar className="bg-primary text-white" onMenuOpenChange={setIsMenuOpen} maxWidth="full">
@@ -37,36 +31,23 @@ export function Header() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <NavbarItem>
-          <Link className="text-white" color="foreground" href="#">
-            Chat
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-white" href="#" aria-current="page">
-            Short Story
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-white" color="foreground" href="#">
-            Vocabulary
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-white" color="foreground" href="#">
-            Take a test
-          </Link>
-        </NavbarItem>
+        {headerMenuItems.map((item, index) => (
+          <NavbarItem key={`${item.text}-${index}`}>
+            <Link className="text-white" color="foreground" href={item.url}>
+              {item.text}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {headerMenuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.text}-${index}`}>
             <Link
               className="w-full"
-              href="#"
+              href={item.url}
               size="lg"
             >
-              {item}
+              {item.text}
             </Link>
           </NavbarMenuItem>
         ))}
