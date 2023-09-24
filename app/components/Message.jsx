@@ -9,8 +9,8 @@ export function Message({userName, children}) {
           src= "/icon_person.svg"
       />
       <div>
-      <h3 className="font-bold">{userName}</h3>
-      {children}
+      <p><b className="font-bold">{userName}</b></p>
+      <p>{children}</p>
       </div>
     </div>
   );
