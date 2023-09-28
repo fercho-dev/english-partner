@@ -1,30 +1,19 @@
-'use client'
+'use-client';
 
-import { useChat } from 'ai/react'
+import React from "react";
 
-export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+import { Header } from "/app/components/Header";
+import { Hero } from "/app/components/Hero";
+import { Features } from "/app/components/FeaturesLanding";
+import { Footer } from "/app/components/Footer";
 
-  return (
-    <div>
-      {messages.map(m => (
-        <div key={m.id}>
-          {m.role === 'user' ? 'User: ' : 'AI: '}
-          {m.content}
-        </div>
-      ))}
-
-      <form onSubmit={handleSubmit}>
-        <label>
-          Say something...
-          <input
-            className="border border-gray-300 rounded"
-            value={input}
-            onChange={handleInputChange}
-          />
-        </label>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  )
+function LandingPage() {
+  return <>
+    <Header />
+    <Hero />
+    <Features />
+    <Footer />
+  </>
 }
+
+export default LandingPage;
