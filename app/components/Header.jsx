@@ -17,7 +17,7 @@ export function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Link className="text-white" color="foreground" href="#">
+          <Link className="text-white" color="foreground" href="/home">
           <Image
             width={70}
             height={70}
