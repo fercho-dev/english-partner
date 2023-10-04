@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { siteConfig } from "@/config/site";
+import GoogleAnalytics from './GoogleAnalytics';
 
 export const metadata = {
 	title: {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<head />
 			<body>
+        <GoogleAnalytics />
         {children}
 			</body>
 		</html>
