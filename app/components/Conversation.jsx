@@ -27,9 +27,10 @@ export function Conversation({ feature }) {
       <div className="w-full max-w-xl self-center">
         {messages.map((m, index) => {
           if(index !== 0) {
-            return <Message key={m.id} userName={m.role === 'user' ? 'Yo: ' : 'Partner: '}>
-              <span>{m.content}</span>
-            </Message>
+            return <Message
+              key={m.id}
+              userName={m.role === 'user' ? 'Yo: ' : 'Partner: '}
+              text={m.content} />
           }
         })}
       </div>
