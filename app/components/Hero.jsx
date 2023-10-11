@@ -3,6 +3,7 @@
 import React from "react";
 import { Button, Link } from "@nextui-org/react";
 import { hero } from "../copys";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -23,7 +24,12 @@ export function Hero() {
           </div>
         </div>
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
+          <Image
+            src="/english-partner.png"
+            alt="english partner"
+            width={500}
+            height={500}
+          />
         </div>
       </div>
     </section>
