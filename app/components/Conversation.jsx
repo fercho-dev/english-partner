@@ -1,6 +1,6 @@
 'use client'
 
-import ReactHtmlParser from "react-html-parser"
+import parse from 'html-react-parser';
 import { Input } from '../components/Input'
 import { Message } from '../components/Message'
 import { useChat } from 'ai/react'
@@ -29,7 +29,7 @@ export function Conversation({ feature }) {
         {messages.map((m, index) => {
           if(index !== 0) {
             return <Message key={m.id} userName={m.role === 'user' ? 'Yo: ' : 'Partner: '}>
-              <span>{ReactHtmlParser(m.content)}</span>
+              <span>{parse(m.content)}</span>
             </Message>
           }
         })}
