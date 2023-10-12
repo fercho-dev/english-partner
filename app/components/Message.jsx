@@ -1,9 +1,8 @@
 import React, { Children } from "react";
 import {Image} from "@nextui-org/react";
+import ParseText from './ParseText'
 
-//className="flex m-[50px]"
-
-export function Message({userName, children}) {
+export function Message({userName, text}) {
   return (
     <div className={`my-2 flex flex-col ${userName.trim() === 'Partner:' ? 'text-left items-start' : 'text-right items-end'}`}>
       <div className="flex">
@@ -14,7 +13,7 @@ export function Message({userName, children}) {
         />
         <p><b className="font-bold">{userName}</b></p>
       </div>
-      <p>{children}</p>
+      <ParseText text={text} />
     </div>
   );
 }

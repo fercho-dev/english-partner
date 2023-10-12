@@ -1,6 +1,5 @@
 'use client'
 
-import parse from 'html-react-parser';
 import { Input } from '../components/Input'
 import { Message } from '../components/Message'
 import { useChat } from 'ai/react'
@@ -9,7 +8,7 @@ import { getFeaturePrompt } from '../prompts'
 
 export function Conversation({ feature }) {
   const featurePrompt = getFeaturePrompt(feature)
-  const firstPrompt = {"role": "user", "content": featurePrompt}
+  const firstPrompt = { "role": "user", "content": featurePrompt }
   const { messages, input, handleInputChange, handleSubmit, append } = useChat()
 
   useEffect(() => {
@@ -27,10 +26,11 @@ export function Conversation({ feature }) {
     <section className="w-full flex flex-col min-h-screen p-4">
       <div className="w-full max-w-xl self-center">
         {messages.map((m, index) => {
-          if(index !== 0) {
-            return <Message key={m.id} userName={m.role === 'user' ? 'Yo: ' : 'Partner: '}>
-              <span>{parse(m.content)}</span>
-            </Message>
+          if (index !== 0) {
+            return <Message
+              key={m.id}
+              userName={m.role === 'user' ? 'Yo: ' : 'Partner: '}
+              text={m.content} />
           }
         })}
       </div>

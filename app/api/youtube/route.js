@@ -7,7 +7,7 @@ export async function GET(request) {
   const keyword = request.nextUrl.searchParams.get('keyword') || null;
   const maxResults = request.nextUrl.searchParams.get('maxResults') || 3;
   const relevanceLanguage = request.nextUrl.searchParams.get('relevanceLanguage') || 'es';
-  const videoDuration = request.nextUrl.searchParams.get('videoDuration') || 'short';
+  const videoDuration = request.nextUrl.searchParams.get('videoDuration') || 'any';
 
   try {
     if (!keyword) {
@@ -24,8 +24,8 @@ export async function GET(request) {
 
     const videos = data.items.map(item => ({
         title: item.snippet.title,
-        thumbnail: item.snippet.thumbnails.default.url,
-        videoURL: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+        //thumbnail: item.snippet.thumbnails.default.url,
+        videoURL: `https://www.youtube.com/embed/${item.id.videoId}`,
     }));
 
     return NextResponse.json(videos);
