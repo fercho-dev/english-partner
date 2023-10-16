@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTubeEmbed from './YoutubeEmbed';
+import parse from 'html-react-parser';
 
 const ParseText = ({ text }) => {
   const youtubeRegex = /\[.*?\]\((https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]{11})\)/g;
@@ -9,7 +10,7 @@ const ParseText = ({ text }) => {
   const urls = [...text.matchAll(youtubeRegex)].map(match => match[1]);
 
   if(urls.length === 0) {
-    return <p>{text}</p>;
+    return <p>{parse(text)}</p>;
   }
 
   // Eliminando las URLs del texto original
@@ -22,7 +23,7 @@ const ParseText = ({ text }) => {
   ));
 
   return <div>
-    <p>{newText}</p>
+    <p>{parse(newTex)}</p>
     {videoElements}
   </div>;
 };
