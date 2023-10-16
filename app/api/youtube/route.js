@@ -6,8 +6,8 @@ const baseURL = 'https://www.googleapis.com/youtube/v3/search';
 export async function GET(request) {
   const keyword = request.nextUrl.searchParams.get('keyword') || null;
   const maxResults = request.nextUrl.searchParams.get('maxResults') || 3;
-  const relevanceLanguage = request.nextUrl.searchParams.get('relevanceLanguage') || 'es';
-  const videoDuration = request.nextUrl.searchParams.get('videoDuration') || 'any';
+  const relevanceLanguage = request.nextUrl.searchParams.get('relevanceLanguage') || 'en';
+  const videoDuration = request.nextUrl.searchParams.get('videoDuration') || 'short';
 
   try {
     if (!keyword) {

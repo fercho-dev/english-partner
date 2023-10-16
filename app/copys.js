@@ -31,6 +31,7 @@ const headerMenuItems = [
   {text: "Chat", url: "/chat"},
   {text: "Historias", url: "/chat?feature=story"},
   {text: "Vocabulario", url: "/chat?feature=vocabulary"},
+  {text: "Videos", url: "/videos"},
   {text: "Test", url: "/chat?feature=test"},
 ];
 
