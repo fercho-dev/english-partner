@@ -1,5 +1,5 @@
 import React from 'react';
-import YouTubeEmbed from './YoutubeEmbed';
+import YouTubeEmbed from './YouTubeEmbed';
 import parse from 'html-react-parser';
 
 const ParseText = ({ text }) => {
@@ -23,7 +23,7 @@ const ParseText = ({ text }) => {
   ));
 
   return <div>
-    <p>{parse(newTex)}</p>
+    <p>{parse(newText)}</p>
     {videoElements}
   </div>;
 };

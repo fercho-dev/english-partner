@@ -6,6 +6,11 @@ const features = [
     button: {url: "/chat", text: "Comenzar a charlar"}
   },
   {
+    title: "Youtube Videos",
+    body: `Utiliza YouTube para mejorar tu inglés. Busca un tema y mira los videos más relevantes.`,
+    button: {url: "/videos", text: "Buscar videos"}
+  },
+  {
     title: "Historias Personalizadas",
     body: `Descubre cuentos generados especialmente para ti, adaptados a tu nivel.
       Aprende y diviértete mientras expandes tu vocabulario con relatos de ficción.`,
