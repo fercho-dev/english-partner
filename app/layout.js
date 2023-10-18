@@ -1,22 +1,38 @@
 import "@/styles/globals.css";
-import { siteConfig } from "@/config/site";
 import GoogleAnalytics from './GoogleAnalytics';
 
 export const metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
-	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
+	title: 'English Partner',
+  description: 'Aprende inglés con una IA como tu compañero de conversación',
+  robots: {
+    index: true,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+    },
+  },
+  openGraph: {
+    title: 'English Partner',
+    description: 'Aprende inglés con una IA como tu compañero de conversación',
+    images: [
+      {
+        url: 'https://i.imgur.com/1QcdIAN.png',
+        width: 800,
+        height: 600,
+        alt: 'English Partner - Aprende inglés con una IA',
+      },
+      {
+        url: 'https://i.imgur.com/1QcdIAN.png',
+        width: 1800,
+        height: 1600,
+        alt: 'English Partner - Aprende inglés con una IA',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
