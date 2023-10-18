@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Header } from '../components/Header'
 import { Input } from '../components/Input'
-import YouTubeEmbed from '../components/YouTubeEmbed'
+import YouTubeEmbed from '../components/YoutubeEmbed'
 
 function Videos() {
   const [inputValue, setInputValue] = useState('');

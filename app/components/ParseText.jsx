@@ -1,5 +1,5 @@
 import React from 'react';
-import YouTubeEmbed from './YouTubeEmbed';
+import YouTubeEmbed from './YoutubeEmbed';
 import parse from 'html-react-parser';
 
 const ParseText = ({ text }) => {
