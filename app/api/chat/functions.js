@@ -24,7 +24,7 @@ export const functions = [
 
 async function get_youtube_vids(keyword, maxResults) {
   const response = await fetch(
-    `http://localhost:3000/api/youtube?keyword=${encodeURIComponent(keyword)}&maxResults=${maxResults}`
+    `${process.env.HOST_DOMAIN || 'http://localhost:3000'}/api/youtube?keyword=${encodeURIComponent(keyword)}&maxResults=${maxResults}`
   );
   const vids = await response.json();
   return JSON.stringify(vids);

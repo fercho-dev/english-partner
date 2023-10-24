@@ -23,7 +23,7 @@ const ParseText = ({ text }) => {
   ));
 
   return <div>
-    <p>{parse(newTex)}</p>
+    <p>{parse(newText)}</p>
     {videoElements}
   </div>;
 };
